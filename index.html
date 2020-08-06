@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-rocket,.fa-coffee,.fa-user-astronaut {font-size:200px}
+</style>
+<head>
+<script src="https://kit.fontawesome.com/067317197e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Main Room</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Main Room</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-container w3-black w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo">ESCAPE SPACE</h1>
+  <p class="w3-xlarge">survive an emergency landing, with a side of espionage</p>
+  <button class="w3-button w3-white w3-padding-large w3-large w3-margin-top">Let's Get Started</button>
+</header>
+
+<!-- First Grid -->
+<div class="w3-row-padding w3-indigo w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-twothird">
+      <h1>Background</h1>
+      <h5 class="w3-padding-32">You and your crew were in a spaceship headed to the moon. Unfortunately, unexpected disturbances interfered with the landing sequence, and the spaceship made an emergency maneuver and landing. You are all thankfully okay, but the spaceship is in great need of repair. The ship landed on the far side of the moon, miles away from the intended landing site. After exiting the unusable spaceship, you stumble upon a habitat that appears to be abandoned.</h5>
+    </div>
+
+    <div class="w3-third w3-center">
+      <i class="fas fa-rocket w3-padding-64 w3-text-light-grey"></i>
+    </div>
+  </div>
+</div>
+
+<!-- Second Grid -->
+<div class="w3-row-padding w3-deep-purple w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-third w3-center">
+      <i class="fas fa-user-astronaut w3-padding64 w3-text-light-grey"></i>
+    </div>
+
+    <div class="w3-twothird">
+      <h1>Objective</h1>
+      <h5 class="w3-padding-32"> In order to survive, the only course of action is to recover the habitat and establish communications with Mission Control. In the process of doing so, you hope to learn about the crew that used to work at this habitat, and why they were there. A quick look around indicates that the habitat is Russian. Once you have successfully contacted Mission Control, they will launch a rescue mission for you and your crew.</h5>
+    </div>
+  </div>
+</div>
+
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
+</body>
+</html>
