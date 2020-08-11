@@ -11,6 +11,12 @@
 
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+body, html {
+  height: 100%;
+  color: #fff;
+  line-height: 1.8;
+}
+
 .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
 .fa-rocket,.fa-coffee,.fa-user-astronaut {font-size:200px}
 
@@ -21,36 +27,44 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
   background-image: url("space-purple.jpg");
   min-height: 100%;
 }
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
 </style>
 
 <head>
 <script src="https://kit.fontawesome.com/067317197e.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
 
-<!-- Navbar -->
+<!-- Navbar (sit on top) -->
 <div class="w3-top">
-  <div class="w3-bar w3-black w3-card w3-left-align w3-large">
-    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Main Room</a>
+  <div class="w3-bar" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="#home" class="w3-bar-item w3-button">Home</a>
+    <a href="#main" class="w3-bar-item w3-button w3-hide-small"> Main Room</a>
   </div>
 
   <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Main Room</a>
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+    <a href="#main" class="w3-bar-item w3-button" onclick="toggleFunction()">Main Room</a>
   </div>
 </div>
 
 <!-- Header -->
-<header class="bgimg-1 w3-display-container w3-grayscale-min w3-center" style="padding:128px 16px">
-  <h1 class="w3-margin w3-text-white w3-jumbo">ESCAPE SPACE</h1>
-  <p class="w3-xlarge w3-text-white">survive an emergency landing, with a side of espionage</p>
-  <button class="w3-button w3-white w3-padding-large w3-large w3-margin-top">Let's Get Started</button>
-</header>
+<div class="bgimg-1 w3-display-container w3-center" id="home">
+	<div class="w3-display-middle">
+    	<h1 class="w3-padding w3-text-white w3-jumbo">ESCAPE SPACE</h1>
+  		<p class="w3-xlarge w3-text-white">survive an emergency landing, with a side of espionage</p>
+  		<button onclick="document.location='#background'" class="w3-button w3-white w3-padding-large w3-large w3-margin-top">Let's Get Started</button>
+    </div>
+</div>
 
 <!-- First Grid -->
-<div class="w3-row-padding w3-indigo w3-padding-64 w3-container">
+<div class="w3-indigo w3-content w3-padding-64 w3-container" id="background">
   <div class="w3-content">
     <div class="w3-twothird">
       <h1>Background</h1>
@@ -64,7 +78,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 </div>
 
 <!-- Second Grid -->
-<div class="w3-row-padding w3-deep-purple w3-padding-64 w3-container">
+<div class="w3-deep-purple w3-padding-64 w3-container">
   <div class="w3-content">
     <div class="w3-third w3-center">
       <i class="fas fa-user-astronaut w3-padding64 w3-text-light-grey"></i>
@@ -79,14 +93,25 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 
 
 <script>
-// Used to toggle the menu on small screens when clicking on the menu button
+// Change style of navbar on scroll
+window.onscroll = function() {myFunction()};
 function myFunction() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-  }
+    var navbar = document.getElementById("myNavbar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-black";
+    } else {
+        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-black", "");
+    }
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
 }
 </script>
 
